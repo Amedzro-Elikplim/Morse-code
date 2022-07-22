@@ -37,7 +37,7 @@ decode_char('.-')
 def decode_word(morse_code)
   word = morse_code.split(' ')
     .map { |char| decode_char(char) }
-    .join()
+    .join('')
   print "#{word} "
 end
 
@@ -46,7 +46,7 @@ decode_word('-- -.--')
 def decode(morse_code)
   sentence = morse_code.split('  ')
     .map { |word| decode_word(word) }
-    .join()
+    .join('')
   print sentence
 end
 
