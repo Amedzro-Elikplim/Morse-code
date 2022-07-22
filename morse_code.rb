@@ -32,12 +32,20 @@ def decode_char(morseCode)
   print $dict[morseCode].upcase;
 end
 
-# decode_char("..-");
+decode_char(".-")
 
 def decode_word(morseCode)
   word = morseCode.split(' ').map { |char| decode_char(char) }.join()
   print word + ' '
 end
 
-# decode_word("-- -.--")
+decode_word("-- -.--")
+
+def decode(morseCode)
+  sentence = morseCode.split('  ').map { |word| decode_word(word) }.join();
+  print sentence
+end
+
+decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+
 
