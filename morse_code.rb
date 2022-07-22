@@ -35,14 +35,18 @@ end
 decode_char(".-")
 
 def decode_word(morseCode)
-  word = morseCode.split(' ').map { |char| decode_char(char) }.join()
+  word = morseCode.split(' ')
+    .map { |char| decode_char(char) }
+    .join()
   print word + ' '
 end
 
 decode_word("-- -.--")
 
 def decode(morseCode)
-  sentence = morseCode.split('  ').map { |word| decode_word(word) }.join();
+  sentence = morseCode.split('  ')
+    .map { |word| decode_word(word) }
+    .join();
   print sentence
 end
 
