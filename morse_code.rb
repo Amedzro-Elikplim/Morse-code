@@ -28,14 +28,14 @@ $dict =
     '--..' => 'z'
   }
 
-def decode_char(morseCode)
-  print $dict[morseCode].upcase;
+def decode_char(morse_code)
+  print $dict[morse_code].upcase;
 end
 
 decode_char(".-")
 
-def decode_word(morseCode)
-  word = morseCode.split(' ')
+def decode_word(morse_code)
+  word = morse_code.split(' ')
     .map { |char| decode_char(char) }
     .join()
   print word + ' '
@@ -43,8 +43,8 @@ end
 
 decode_word("-- -.--")
 
-def decode(morseCode)
-  sentence = morseCode.split('  ')
+def decode(morse_code)
+  sentence = morse_code.split('  ')
     .map { |word| decode_word(word) }
     .join();
   print sentence
